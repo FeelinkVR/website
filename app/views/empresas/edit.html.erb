@@ -1,0 +1,49 @@
+<div class='container'>
+
+    <h1>Editar Empresa</h1><br/>
+
+    <%= form_for :empresa, url: empresa_path, method: :patch do |f| %>
+
+        <div >
+            <%= f.label :nombre %><br>
+            <%= f.text_field :nombre %>
+        </div>
+
+        <div>
+            <%= f.label :rut %><br>
+            <%= f.text_field :rut %>
+        </div>
+
+        <div>
+            <%= f.label :direccion %><br>
+            <%= f.text_field :direccion %>
+        </div>
+
+        <div class=" col-4">
+            <%= f.label :oficina %><br>
+            <%= f.text_field :oficina %>
+        </div>
+
+        <div>
+            <%= f.label :region %><br>
+            <%= f.select :region, ["Region Metropolitana"], {} %>
+        </div>
+        
+        <div>
+        <%= f.label :comuna %><br>
+            <%= f.select :comuna, ["Santiago","Conchalí","Huechuraba","Independencia",
+            "Quilicura","Recoleta","Renca","Las Condes","Lo Barnechea","Providencia",
+            "Vitacura","La Reina","Macul","Ñuñoa","Peñalolén","La Florida","La Granja",
+            "El Bosque","La Cisterna","La Pintana","San Ramón","Lo Espejo","Pedro Aguirre Cerda",
+            "San Joaquín","San Miguel","Cerrillos","Estación Central","Maipú","Cerro Navia","Lo Prado",
+            "Pudahuel","Quinta Normal"],
+            {} %>
+        </div>
+        
+        <div >
+            <%= f.submit "Editar" %>
+            <%= link_to "Volver", :back%>
+        </div>
+
+    <% end %>
+</div>

@@ -1,0 +1,246 @@
+// Place all the styles related to the microinsulto_encuesta_inicials controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+/*multi-step-form*/
+
+#form-microinsulto-inicial {
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+    position: relative;
+}
+
+#form-microinsulto-inicial fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 10%;
+    box-sizing: border-box;
+    /*stacking fieldsets above each other*/
+    position: absolute;
+    width: 100%;
+}
+
+#form-microinsulto-inicial .field-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: left;
+}
+
+
+/*Hide all except first fieldset*/
+
+#form-microinsulto-inicial fieldset:not(:first-of-type) {
+    display: none;
+}
+
+
+/*inputs*/
+
+#form-microinsulto-inicial textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 13px;
+}
+
+
+/*radio-buttons*/
+
+#form-microinsulto-inicial input[type="radio"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: var(--form-background);
+    /* Not removed via appearance */
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+    padding: 0em;
+    margin-right: 20px;
+}
+
+#form-microinsulto-inicial input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+}
+
+#form-microinsulto-inicial input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+#form-microinsulto-inicial input[type="radio"]:focus {
+    outline: max( 0.125em, 0.15em) solid currentColor;
+    outline-offset: max( 0.125em, 0.15em);
+}
+
+
+/*radio-button*/
+
+#form-microinsulto-inicial .radio-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+/*buttons*/
+
+#form-microinsulto-inicial .previous-microinsulto-incial {
+    width: 100px;
+    background: #969696;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+#form-microinsulto-inicial .previous-microinsulto-incial:hover,
+#form-microinsulto-inicial .previous-microinsulto-incial:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #969696;
+}
+
+#form-microinsulto-inicial .next-microinsulto-inicial {
+    width: 100px;
+    background: #4da090;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+#form-microinsulto-inicial .next-microinsulto-inicial:hover,
+#form-microinsulto-inicial .next-microinsulto-inicial:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #4da090;
+}
+
+
+/*headings*/
+
+#form-microinsulto-inicial .fs-title {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #63a2cb;
+    margin-bottom: 10px;
+}
+
+#form-microinsulto-inicial .fs-subtitle {
+    font-weight: normal;
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+
+/*progressbar-microinsulto-inicial*/
+
+#progressbar-microinsulto-inicial {
+    margin-bottom: 30px;
+    overflow: hidden;
+    /*CSS counters to number the steps*/
+    counter-reset: step;
+    ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#progressbar-microinsulto-inicial li {
+    list-style-type: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 9px;
+    width: 12.5%;
+    float: left;
+    position: relative;
+}
+
+#progressbar-microinsulto-inicial li:before {
+    content: counter(step);
+    width: 20px;
+    line-height: 20px;
+    display: block;
+    font-size: 10px;
+    color: #333;
+    background: white;
+    border-radius: 3px;
+    margin: 0 auto 5px auto;
+}
+
+#progressbar-microinsulto-inicial li:not(:first-child):before {
+    counter-increment: step;
+}
+
+
+/*progressbar-microinsulto-inicial connectors*/
+
+#progressbar-microinsulto-inicial li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: -50%;
+    top: 9px;
+    z-index: -1;
+    /*put it behind the numbers*/
+}
+
+#progressbar-microinsulto-inicial li:first-child:after {
+    /*connector not needed before the first step*/
+    content: none
+}
+
+
+/*marking active/completed steps green*/
+
+
+/*The number of the step and the connector before it = green*/
+
+#progressbar-microinsulto-inicial li.active:before,
+#progressbar-microinsulto-inicial li.active:after {
+    background: #4da090;
+    color: white;
+}
+
+#form-microinsulto-inicial .boton-enviar {
+    width: 100px;
+    background: #4da090;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}

@@ -1,0 +1,49 @@
+<div class='container'>
+
+    <h1>Añadir Empresa</h1><br/>
+
+    <%= form_for :empresa, url: empresas_path, method: :post do |f| %>
+
+        <div class="field">
+            <%= f.label :nombre %><br>
+            <%= f.text_field :nombre %>
+        </div>
+
+        <div class="field">
+            <%= f.label :rut%><br>
+            <%= f.text_field :rut %>
+        </div>
+
+        <div class="field">
+            <%= f.label :direccion, class: "form-label" %><br>
+            <%= f.text_field :direccion, class: "form-control" %>
+        </div>
+
+        <div class="field">
+            <%= f.label :oficina, class: "form-label" %><br>
+            <%= f.text_field :oficina, class: "form-control" %>
+        </div>
+
+        <div class="field">
+            <%= f.label :region %><br>
+            <%= f.select :region, ["Region Metropolitana"], {}%>
+        </div>
+        
+        <div class="field">
+        <%= f.label :comuna %><br>
+            <%= f.select :comuna, ["Santiago","Conchalí","Huechuraba","Independencia",
+            "Quilicura","Recoleta","Renca","Las Condes","Lo Barnechea","Providencia",
+            "Vitacura","La Reina","Macul","Ñuñoa","Peñalolén","La Florida","La Granja",
+            "El Bosque","La Cisterna","La Pintana","San Ramón","Lo Espejo","Pedro Aguirre Cerda",
+            "San Joaquín","San Miguel","Cerrillos","Estación Central","Maipú","Cerro Navia","Lo Prado",
+            "Pudahuel","Quinta Normal"],
+            {}%>
+        </div>
+        
+        <div>
+            <%= f.submit "Añadir Empresa" %>
+            <%= link_to "Volver", :back%>
+        </div>
+
+    <% end %>
+</div>

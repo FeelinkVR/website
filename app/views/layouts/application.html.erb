@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Feelink</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="overflow-hidden">
+      <%= render 'layouts/components/alerts' %>     
+      <% if user_signed_in? %>
+      <div class="layout">
+        <%= render "layouts/components/navbar" %>
+        <%= render "layouts/components/sidebar" %>
+        <!----------------- Content ----------------->
+        <div class="content overflow-y-scroll">
+          <main class="container mx-auto pt-8 pb-24 px-6">
+          <%= yield%>
+          <main>
+        </div>
+      </div>
+      <% else %>
+        <%= yield %>
+      <% end %>
+  </body>
+</html>

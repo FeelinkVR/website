@@ -1,0 +1,2 @@
+module MicroinsultoEncuestaInicialsHelper
+end

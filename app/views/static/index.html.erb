@@ -1,0 +1,18 @@
+<section class= "layout-dashboard">
+    <div class="encuestas-general">
+        <h2 class="text-3xl font-extrabold dark:text-white mb-4">Puntajes Generales</h2>
+                <p class="mb-3 text-lg font-light text-gray-500 md:text-xl dark:text-gray-400">Valores promedio obtenido por los empleados de acuerdo las encuestas realizadas.</p>
+         <%= render "static/sections/grafico_barras" , user: @user, nota1: @nota1, nota2: @nota2, nota3: @nota3, nota4: @nota4, nota5: @nota5, nota6: @nota6%>
+    </div>
+    <div class ="tendencias-general">
+        <h2 class="text-3xl font-extrabold dark:text-white my-4">Tendencias Generales de conductas</h2>
+        <p class="mb-3 text-lg font-light text-gray-500 md:text-xl dark:text-gray-400">Análisis de decisiones promedio de los empleados que tiene como objetivo fomentar que no sigan ocurriendo microagresiones.</p>
+        <%= render "static/sections/grafico_polar_dashboard" , empresa: @empresa %>
+    </div>
+    <div class ="simulaciones-general">
+        <h2 class="text-3xl font-extrabold dark:text-white my-4">Asignaciones Generales</h2>
+        <p class="mb-3 text-lg font-light text-gray-500 md:text-xl dark:text-gray-400">Recuento total de las simulaciones pendientes y realizadas por todos los empleados.</p>
+        <%= render "static/sections/grafico_torta" , user: @user, realizadas: @empresa.cantidad_simulaciones_realizadas, pendientes: @empresa.cantidad_simulaciones_pendientes%>
+    </div>
+
+</section>

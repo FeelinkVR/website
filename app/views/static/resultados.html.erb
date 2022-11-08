@@ -1,0 +1,27 @@
+
+<% if current_user.encargado %>
+    <h1 class="text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-5xl dark:text-white"><%= "#{@user.nombre} #{@user.apellido}" %></h1>
+    <h2 class="text-2xl font-bold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-5xl dark:text-white mt-5">Resultados</h2>
+
+<% else %>
+    <h1 class="text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-5xl dark:text-white">Resultados</h1>
+<% end %>
+
+
+
+
+<section class= "layout-graficos">
+    <div class="encuestas">
+        <h2 class="text-3xl font-extrabold dark:text-white my-4">Puntajes encuestas</h2>
+        <p class="mb-3 text-lg font-light text-gray-500 md:text-xl dark:text-gray-400">Valores obtenidos de acuerdo las encuestas realizadas.</p>
+        <%= render "static/sections/grafico_barras" , user: @user, nota1: @nota1, nota2: @nota2, nota3: @nota3, nota4: @nota4, nota5: @nota5, nota6: @nota6%>
+    </div>
+    <div class ="simulaciones">
+        <h2 class="text-3xl font-extrabold dark:text-white my-4">Tendencias de conductas</h2>
+        <p class="mb-3 text-lg font-light text-gray-500 md:text-xl dark:text-gray-400">Análisis de decisiones que tiene como objetivo fomentar que no sigan ocurriendo microagresiones. (1: 100%, 0: 0%)</p>
+        <%= render "static/sections/grafico_polar" , user: @user %>
+        </div>
+</section>
+
+
+        <%= link_to "Volver", :back, class: "text-white hover:text-blue-900 border border-blue-900 bg-blue-800 hover:bg-white focus:ring-4 focus:outline-none focus:ring-blue-600 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 mb-5"%>

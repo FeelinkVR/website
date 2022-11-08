@@ -1,0 +1,322 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.bg-feelink {
+    background-color: #00fca8;
+}
+
+
+/*dashboard page*/
+
+.layout-dashboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.encuestas-general {
+    width: 100% !important;
+}
+
+.simulaciones-general {
+    margin-top: 2rem !important;
+    width: 80% !important;
+    margin: auto;
+}
+
+.tendencias-general {
+    margin-top: 2rem !important;
+    width: 80% !important;
+    margin: auto;
+}
+
+@media (min-width: 1280px) {
+    .layout-dashboard {
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: left;
+        justify-content: start;
+    }
+    .layout-dashboard>h2 {
+        margin-left: 5%;
+    }
+    .encuestas-general {
+        width: 65% !important;
+        margin: 0;
+    }
+    .simulaciones-general {
+        width: 40% !important;
+        margin: 0;
+    }
+    .tendencias-general {
+        width: 40% !important;
+        margin-right: 4rem;
+        margin-left: 0;
+    }
+}
+
+
+/*mi empresa page*/
+
+.empleados-actions>button {
+    width: 100%;
+}
+
+
+/*simulaciones page*/
+
+.columna-tabla {
+    width: 50%;
+}
+
+
+/*resultados page*/
+
+.layout-graficos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.encuestas {
+    margin-top: 2rem !important;
+    width: 100% !important;
+}
+
+.simulaciones {
+    margin-top: 2rem !important;
+    width: 80% !important;
+    margin: auto;
+}
+
+@media (min-width: 1280px) {
+    .layout-graficos {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: left;
+    }
+    .encuestas {
+        width: 55% !important;
+    }
+    .simulaciones {
+        width: 40% !important;
+    }
+}
+
+
+/* microinsulto page*/
+
+#tablas-microinsulto {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+#tablas-microinsulto>div {
+    width: 100%;
+}
+
+
+/* simulaciones page*/
+
+#microagresiones {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+#microagresiones>.heading {
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+#microagresiones>.type {
+    width: 80%;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 1280px) {
+    #microagresiones {
+        text-align: left;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+    #microagresiones>.type {
+        width: 30%;
+    }
+}
+
+
+/* General layout*/
+
+.layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    height: calc(100vh - 80px);
+}
+
+.header {
+    height: 80px;
+}
+
+@media (min-width: 640px) {
+    .layout {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        grid-template-areas: "header header" "sidebar content";
+    }
+    .sidebar {
+        grid-area: sidebar;
+    }
+    .content {
+        grid-area: content;
+        height: calc(100vh - 70px);
+    }
+    .header {
+        grid-area: header;
+        height: 70px;
+    }
+}
+
+#sidenav-open {
+    --easeOutExpo: cubic-bezier(0.16, 1, 0.3, 1);
+    --duration: 0.6s;
+}
+
+@media (max-width: 640px) {
+    #sidenav-open {
+        position: absolute;
+        top: 80px;
+        width: 100%;
+        overflow: hidden auto;
+        overscroll-behavior: contain;
+        visibility: hidden;
+        transform: translateX(-110vw);
+        will-change: transform;
+        transition: transform var(--duration) var(--easeOutExpo), visibility 0s linear var(--duration);
+    }
+    .show-sidebar {
+        visibility: visible !important;
+        transform: translateX(0) !important;
+        transition: transform var(--duration) var(--easeOutExpo) !important;
+    }
+}
+
+#profile-progress {
+    border: 1em solid white;
+    border-right-color: #4a00e0;
+    border-top-color: #4a00e0;
+    border-bottom-color: #4a00e0;
+    animation: thickening 1s 0.5s linear normal;
+    border-left-color: white;
+    border-radius: 50%;
+}
+
+@keyframes thickening {
+    from {
+        border-width: 0.2em;
+    }
+    to {
+        border-width: 1em;
+    }
+}
+
+
+/* notice */
+
+.notice {
+    --tw-bg-opacity: 1;
+    background-color: rgba(222, 247, 236, var(--tw-bg-opacity));
+    --tw-border-opacity: 1;
+    border-color: rgba(14, 159, 110, var(--tw-border-opacity));
+    --tw-text-opacity: 1;
+    color: rgba(4, 108, 78, var(--tw-text-opacity));
+}
+
+.notice-close {
+    --tw-bg-opacity: 1;
+    background-color: rgba(222, 247, 236, var(--tw-bg-opacity));
+    --tw-border-opacity: 1;
+    border-color: rgba(14, 159, 110, var(--tw-border-opacity));
+    --tw-text-opacity: 1;
+    color: rgba(4, 108, 78, var(--tw-text-opacity));
+}
+
+.notice-close:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(188, 240, 218, var(--tw-bg-opacity));
+}
+
+.notice-close:focus {
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgba(49, 196, 141, var(--tw-ring-opacity));
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), 0 0 #0000;
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+
+/* alert */
+
+.alert {
+    --tw-text-opacity: 1;
+    color: rgba(153, 27, 27, var(--tw-text-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgba(254, 202, 202, var(--tw-bg-opacity));
+    --tw-border-opacity: 1;
+    border-color: rgba(153, 27, 27, var(--tw-border-opacity));
+}
+
+.alert-close {
+    --tw-text-opacity: 1;
+    color: rgba(153, 27, 27, var(--tw-text-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgba(254, 202, 202, var(--tw-bg-opacity));
+    --tw-border-opacity: 1;
+    border-color: rgba(153, 27, 27, var(--tw-border-opacity));
+}
+
+.alert-close:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgba(251, 213, 213, var(--tw-bg-opacity));
+}
+
+.alert-close:focus {
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgba(249, 128, 128, var(--tw-ring-opacity));
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), 0 0 #0000;
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.hidden {
+    display: none;
+}

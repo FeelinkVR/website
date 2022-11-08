@@ -1,0 +1,47 @@
+<section class="bg-gray-900 p-4">
+    <div class="container mx-auto flex justify-center items-center flex-wrap  g-6 text-white min-h-screen">
+        <div class="md:w-6/12 lg:w-4/12">
+          <%= image_tag("simibrains-logo.png", :alt => "simibrains-logo") %>
+        </div>
+        <div class="md:w-8/12 lg:w-5/12 lg:ml-20 space-y-8 md:space-y-10 sm:p-12 bg-gray-800 border-gray-700 rounded-lg shadow border p-6">
+          <a href="/" class="flex items-center justify-center mb-6 text-2xl font-semibold text-white">
+            <%= image_tag("logo.png", :alt => "logo-feelink") %> 
+          </a>
+          <h1 class="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl mb-6">
+            Iniciar sesión en tu cuenta
+          </h1>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+            <!-- Email input -->
+            <div class="field mb-6">
+              <%= f.email_field :email, placeholder:"Email", autofocus: true, autocomplete: "email", class:"form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"%>
+            </div>
+
+              
+            <!-- Password input -->
+            <div class="field mb-6">
+              <%= f.password_field :password, placeholder: "Password", autocomplete: "current-password", class:"form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" %>
+            </div>
+            <!-- Links -->
+            <div class="flex justify-between items-center flex-wrap mb-6">
+              <% if devise_mapping.rememberable? %>
+                <div class="field w-full md:w-max py-4">
+                <%= f.check_box :remember_me, class: " form-check-input h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" %>
+                <p class="form-check-label inline-block text-white"> Recuérdame </p>
+                </div>
+              <% end %>
+              <div class="p-0 md:float-right lg:float-right">
+                <%= render "devise/shared/links" %>
+              </div>
+            </div>
+  
+            <!-- Submit button -->
+            <div class="actions">
+              <%= f.submit "Iniciar Sesión", class: "inline-block px-7 py-3 bg-feelink text-black font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-white hover:shadow-lg focus:bg-white focus:shadow-lg focus:outline-none focus:ring-0 active:bg-white active:shadow-lg transition duration-150 ease-in-out w-full" %>
+            </div>
+
+          <% end %>
+
+        </div>
+    </div>
+  </section>

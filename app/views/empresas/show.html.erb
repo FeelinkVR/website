@@ -1,0 +1,117 @@
+
+<h2 class="text-4xl font-extrabold dark:text-white mb-4">Mi Empresa</h2>
+
+<p class="text-lg text-gray-500"><%= "Nombre: #{@empresa.nombre}" %></p>
+<p class="text-lg text-gray-500 mb-4">
+    Dirección: 
+    <%= @empresa.direccion %>,
+    <% if !@empresa.oficina.empty? %>
+            <%= "Of. #{@empresa.oficina}" %>,
+    <% end %>
+    <%= @empresa.comuna %>.
+</p>
+
+<h2 class="text-2xl font-extrabold dark:text-white my-4">Listado de Empleados</h2>
+
+<% if @empresa.empleados.empty?%>
+    <p>No hay nada aqui todavia</p>
+<% else %>
+
+    <div class="overflow-x-auto relative shadow-md sm:rounded-lg mb-5">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="py-3 px-6">
+                        Nombre
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Cargo
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Simulaciones Realizadas
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Simulaciones Pendientes
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Acciones
+                    </th>
+                </tr>
+            </thead>
+            <% @empresa.empleados.each do |empleado| %>
+                <tbody>
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <th class="py-4 px-6">
+                            <div class ="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
+                                <img class="w-10 h-10 rounded-full" src="/images/avatar2.png" alt="Jese image">
+                                <div class="pl-3">
+                                    <div class="text-base font-semibold"><%= link_to "#{empleado.nombre} #{empleado.apellido} ", user_path(empleado.id)%> </div>
+                                    <div class="font-normal text-gray-500"><%= empleado.email %></div>
+                                </div> 
+                            </div> 
+                        </th>
+                        <td class="py-4 px-6">
+                            React Developer
+                        </td>
+                        <td class="py-4 px-6">
+                            <% if empleado.simulaciones_realizadas.empty?%>
+                                No ha realizado simulaciones
+                            <% else %>
+                                <ul>
+                                <% empleado.simulaciones_realizadas.each do |simulacion| %>
+                                    
+                                    <li class ="text-green-600"><%= "#{simulacion.tipo} como #{simulacion.perspectiva}" %></li>
+                                <% end %>
+                                </ul>
+                            <% end %>
+                        </td>
+                        <td class="py-4 px-6">
+                            <% if empleado.simulaciones_pendientes.empty?%>
+                                No hay simulaciones pendientes
+                            <% else %>
+                                <ul>
+                                <% empleado.simulaciones_pendientes.each do |simulacion| %>
+                                    
+                                    <li><%= "#{simulacion.tipo} como #{simulacion.perspectiva}" %></li>
+                                <% end %>
+                                </ul>
+                            <% end %>
+                        </td>
+                        <td class="py-4 px-6 empleados-actions">
+                            <button>
+                                <%= link_to "Ver", resultados_path(empleado.id), class: "block text-white hover:text-green-900 border border-green-900 bg-green-800 hover:bg-white focus:ring-4 focus:outline-none focus:ring-green-600 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-4"%>
+                            </button>
+                            <%= render "simulations/new", {:user => empleado}%>
+                            <% if !empleado.simulaciones_pendientes.empty? %>
+                                <%= render "simulations/delete", {:user => empleado}%>
+                            <% end %>
+
+                        </td>
+                    </tr>
+                </tbody>
+            <% end %>
+        </table>
+    </div>
+    <% end %>
+
+
+<div>
+    <% if can? :new, User %>
+        <%= link_to "Añadir Empleado", empresa_new_user_path(empresa_id: @empresa.id), 
+        class: "text-white hover:text-blue-900 border border-blue-900 bg-blue-800 hover:bg-white focus:ring-4 focus:outline-none focus:ring-blue-600 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 mb-5 float-right"%>
+    <% end%>
+    
+    <% if can? :manage, Empresa %>
+        <%= link_to "Volver", empresas_path %> <br/>
+    <% end %>
+    
+    <% if can? :edit, Empresa %>
+        <%= link_to "Editar", edit_empresa_path %>
+    <% end%>
+
+    <% if can? :delete, Empresa %>
+        <div style="display:inline-block;">
+            <%= button_to "Eliminar", empresa_path(@empresa.id), method: :delete %>
+        </div>
+    <% end%>
+</div>

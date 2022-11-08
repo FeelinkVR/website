@@ -1,0 +1,148 @@
+
+<h2 class="text-4xl font-extrabold dark:text-white mb-4">Microinsulto</h2>
+
+
+<section id="tablas-microinsulto" >
+
+<div class="heading">
+    <h2 class="text-2xl font-extrabold dark:text-white mt-5">Encuestas</h2>
+</div>
+
+<div class="overflow-x-auto relative shadow-md sm:rounded-lg mb-5">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="columna-tabla py-3 px-6">
+                    Encuesta
+                </th>
+                <th scope="col" class="columna-tabla py-3 px-6">
+                    Estado
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="col" class="columna-tabla py-3 px-6">
+                Encuesta Inicial    
+            </th>
+            <th scope="col" class="columna-tabla py-3 px-6">
+                <div>
+                <% if @user.microinsulto_encuesta_inicial.nil?%>
+                <span class="relative inline-block px-3 py-1 font-semibold text-orange-900 leading-tight">
+                  <span aria-hidden class="absolute inset-0 bg-orange-200 opacity-50 rounded-full"></span>
+                  <span class="relative"> 
+                    <%= link_to "Pendiente", new_user_microinsulto_encuesta_inicial_path(user_id: @user.id), class: 'btn' %>
+                  </span>
+                </span>
+                <% else %>
+                <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                  <span aria-hidden class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
+                  <span class="relative"> 
+                    Realizada 
+                  </span>
+                </span>
+                <% end %>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th scope="col" class="columna-tabla py-3 px-6">
+                Encuesta Final
+            </th>
+            <th scope="col" class="columna-tabla py-3 px-6">
+                <div>
+                <% if @user.microinsulto_encuesta_final.nil?%>
+                    
+                    <% if !@user.simulaciones_microinsulto_pendientes.nil? && @user.simulaciones_realizadas.where(tipo: "Microinsulto").all.count >= 1 && !@user.microinsulto_encuesta_inicial.nil? %>
+                        <span class="relative inline-block px-3 py-1 font-semibold text-orange-900 leading-tight">
+                            <span aria-hidden class="absolute inset-0 bg-orange-200 opacity-50 rounded-full"></span>
+                            <span class="relative"> 
+                                <%= link_to "Pendiente", new_user_microinsulto_encuesta_final_path(user_id: @user.id) %>
+                            </span>
+                        </span>
+                    <% else %>
+                        <span class="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
+                            <span class="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span> 
+                            <span class="relative"> 
+                                No Disponible
+                            </span>
+                        </span>
+                    <% end %>
+                <% else %>
+                <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                  <span aria-hidden class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
+                  <span class="relative">
+                    Realizada
+                  </span>
+                </span>
+                <% end %>
+                </div>
+            </th>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="heading">
+    <h2 class="text-2xl font-extrabold dark:text-white mb-5">Simulaciones Asignadas</h2>
+</div>
+
+
+<% if @user.simulaciones.where(tipo: "Microinsulto").empty?%>
+
+<div class="overflow-x-auto relative shadow-md sm:rounded-lg mb-5">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="columna-tabla py-3 px-6">
+                        Simulación
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="col" class="columna-tabla py-3 px-6">
+                    Sin Simulaciones
+                </th>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+<% else %>
+
+    <div class="overflow-x-auto relative shadow-md sm:rounded-lg mb-5">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="columna-tabla py-3 px-6">
+                        Simulación
+                    </th>
+                    <th scope="col" class="columna-tabla py-3 px-6">
+                        Estado
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            <% @user.simulaciones.where(tipo: "Microinsulto").each do |simulacion|%>
+            <tr>
+                <th scope="col" class="columna-tabla py-3 px-6">
+                    <%= simulacion.perspectiva %>
+                </th>
+                <th scope="col" class="columna-tabla py-3 px-6">
+                    <%= simulacion.realizada ? "Realizada" : "Pendiente" %>
+                </th>
+            </tr>
+            <% end %>
+            </tbody>
+        </table>
+    </div>
+
+<% end %>
+
+
+<div class="my-5">
+    <%= link_to "Volver", simulaciones_path, 
+    class: "text-white hover:text-blue-900 border border-blue-900 bg-blue-800 hover:bg-white focus:ring-4 focus:outline-none focus:ring-blue-600 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 mb-5 "%>
+</div>
+</section>
+

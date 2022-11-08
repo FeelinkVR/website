@@ -1,0 +1,2 @@
+module MicroinvalidacionEncuestaFinalsHelper
+end
