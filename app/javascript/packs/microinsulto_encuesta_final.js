@@ -1,5 +1,5 @@
 // A $( document ).ready() block.
-$(document).ready(function() {
+$(document).on("turbolinks:load", function() {
     console.log("ready!");
     //jQuery time
     var current_fs, next_fs, previous_fs; //fieldsets

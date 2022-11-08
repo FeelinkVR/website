@@ -1,12 +1,13 @@
 // A $( document ).ready() block.
-$(document).ready(function() {
+$(document).on("turbolinks:load", function() {
+    console.log("turbo links load");
     //jQuery time
     var current_fs, next_fs, previous_fs; //fieldsets
     var left, opacity, scale; //fieldset properties which we will animate
     var animating; //flag to prevent quick multi-click glitches
 
     var back = 0;
-    var next= true;
+    var next = true;
     var pregunta1 = $("[name='microinsulto_encuesta_inicial[pregunta1]']");
     var pregunta2 = $("[name='microinsulto_encuesta_inicial[pregunta2]']");
     var pregunta3 = $("[name='microinsulto_encuesta_inicial[pregunta3]']");
@@ -16,30 +17,30 @@ $(document).ready(function() {
     var pregunta7 = $("[name='microinsulto_encuesta_inicial[pregunta7]']");
 
 
-    pregunta1.on("click",function(){
+    pregunta1.on("click", function() {
         next = true;
     });
-    pregunta2.on("click",function(){
+    pregunta2.on("click", function() {
         next = true;
     });
-    pregunta3.on("click",function(){
+    pregunta3.on("click", function() {
         next = true;
     });
-    pregunta4.on("click",function(){
+    pregunta4.on("click", function() {
         next = true;
     });
-    pregunta5.on("click",function(){
+    pregunta5.on("click", function() {
         next = true;
     });
-    pregunta6.on("click",function(){
+    pregunta6.on("click", function() {
         next = true;
     });
-    pregunta7.on("click",function(){
+    pregunta7.on("click", function() {
         next = true;
     });
 
     $(".next-microinsulto-inicial").click(function() {
-        if (next){
+        if (next) {
             if (animating) return false;
             animating = true;
 
@@ -74,12 +75,12 @@ $(document).ready(function() {
             });
 
         }
-        if (back>0){
+        if (back > 0) {
             back -= 1;
-        } 
-        if (back == 0){
+        }
+        if (back == 0) {
             next = false;
-        }      
+        }
     });
     $(".previous-microinsulto-incial").click(function() {
         if (animating) return false;
@@ -115,6 +116,6 @@ $(document).ready(function() {
             easing: 'easeOutQuint'
         });
         next = true;
-        back +=1 ;
+        back += 1;
     });
 });
