@@ -8,6 +8,11 @@ class MicroinsultoEncuestaFinalsController < ApplicationController
         @encuesta = MicroinsultoEncuestaFinal.new()
     end
 
+    def show
+        @encuesta = MicroinsultoEncuestaFinal.find(params[:id])
+        @user = User.find(params[:user_id])
+    end
+
     def create
         @user = User.find(params[:user_id])
         if !@user.microinsulto_encuesta_final.nil?
@@ -19,7 +24,7 @@ class MicroinsultoEncuestaFinalsController < ApplicationController
 
         if @encuesta.save
             flash[:notice] = "Encuesta completada con exito"
-            redirect_to microinsulto_path(@user.id)
+            redirect_to user_microinsulto_encuesta_final_path(user_id: @user, id: @encuesta.id)
         else
             flash[:alert] = @encuesta.errors.full_messages.join(', ')
         end
