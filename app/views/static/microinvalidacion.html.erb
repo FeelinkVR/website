@@ -1,5 +1,5 @@
 
-<h2 class="text-4xl font-extrabold dark:text-white mb-4">Microinvalidacion</h2>
+<h2 class="text-4xl font-extrabold dark:text-white mb-4">Microinvalidación</h2>
 
 
 <section id="tablas-microinsulto" >
@@ -72,7 +72,7 @@
                 <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                   <span aria-hidden class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
                   <span class="relative">
-                    Realizada
+                    <%= link_to "Realizada",user_microinvalidacion_encuesta_final_path(user_id: @user, id: @user.microinvalidacion_encuesta_final.id) %>
                   </span>
                 </span>
                 <% end %>

@@ -1,0 +1,71 @@
+<div class='container text-center'>
+<h2 class="text-4xl font-extrabold dark:text-white mb-4">Encuesta Final de Microinvalidacion</h2>
+
+
+<h2 class='text-3xl'> Resultado: <%= @encuesta.porcentaje_bueno %>/100 </h2>
+
+
+<a class="block p-6 m-6 max-w bg-white rounded-lg border border-gray-200 shadow-md <%= @encuesta.pregunta1 ? 'bg-green-200' : 'bg-red-200' %>">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Pregunta 1: <%= @encuesta.pregunta1 ? "Correcta" : "Incorrecta" %></h5>
+    <p class="font-normal text-gray-700 dark:text-gray-400">De acuerdo a la simulación, ¿qué crees que se pudo evidenciar?</p>
+    <p class="font-normal text-gray-700 dark:text-gray-400">
+        a) Comentario o acción discriminatoria de manera sutil. </br>
+        b) Comportamiento intencional y discriminatorio sin pretensión de ofensa. </br>
+        c) Minimización de experiencias ajenas. </br>
+        d) No hubo ningún comentario o acción inadecuada. </br>
+    </p>
+    </br>
+    <b>La respuesta correcta era: c) Minimización de experiencias ajenas.</b>
+</a>
+
+
+<a class="block p-6 m-6 max-w bg-white rounded-lg border border-gray-200 shadow-md <%= @encuesta.pregunta2 ? 'bg-green-200' : 'bg-red-200' %>">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Pregunta 2: <%= @encuesta.pregunta2 ? "Correcta" : "Incorrecta" %></h5>
+    <p class="font-normal text-gray-700 dark:text-gray-400 ">
+        Teniendo bajo consideración lo siguiente: </br>
+        I) Comportamientos intencionales y discriminatorios sin pretensión de ofensa. </br>
+        II)Menospreciar o invalidar experiencias ajenas. </br>
+        III)Comentarios o acciones que son discriminatorias accidentalmente.</br></br>
+        En la/s simulación/es realizada/s recientemente, cuál definición describe de mejor manera lo que usted experimentó:
+    </p> 
+    <p class="font-normal text-gray-700 dark:text-gray-400">
+    a) Solo I </br>
+    b) Solo II </br>
+    c) Solo III </br>
+    d) I, II </br>
+    e) III, I </br>
+    f) Ninguna de las anteriores. </br>
+
+    </p>
+    </br>
+    <b>La respuesta correcta era: b) Solo II</b>
+</a>
+
+<a class="block p-6 m-6 max-w bg-white rounded-lg border border-gray-200 shadow-md <%= @encuesta.pregunta3 ? 'bg-green-200' : 'bg-red-200' %>">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Pregunta 3: <%= @encuesta.pregunta3 ? "Correcta" : "Incorrecta" %></h5>
+    <p class="font-normal text-gray-700 dark:text-gray-400">¿Quién consideras que fue la persona agredida la/s simulación/es realizada/s?</p>
+    <p class="font-normal text-gray-700 dark:text-gray-400">
+        Víctima: </br>
+            a) Yo, fui la víctima de la simulación. </br>
+            b) El jefe que me llamó a la oficina. </br>
+            c) Guillermo, el trabajador que llegó a la oficina. </br>
+            d) Nadie fue víctima en la simulación. </br>
+        Victimario: </br>
+            e) Yo, fui la víctima de la simulación. </br>
+            f) Paula, la compañera que tiene hijos. </br>
+            g) Ana, la compañera que habla mucho. </br>
+            h) Nadie fue víctima en la simulación. </br>
+        Testigo: </br>
+            i) Yo, fui la víctima de la simulación. </br>
+            j) Jorge, el secretario de la oficina. </br>
+            k) David, el compañero en su día libre. </br>
+            l) Nadie fue víctima en la simulación. </br>
+
+    </p>
+    </br>
+    <b>Las respuestas correctan eran:  a) Yo, fui la víctima de la simulación, f) Paula, la compañera que tiene hijos y k) David, el compañero en su día libre. </b>
+</a>
+
+
+<%= link_to "Volver", microinvalidacion_path(user_id: @user.id),  class:" m-6 float-right text-gray-500 bg-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"%>
+</div>
