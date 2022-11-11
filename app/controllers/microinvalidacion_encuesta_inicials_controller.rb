@@ -1,4 +1,10 @@
 class MicroinvalidacionEncuestaInicialsController < ApplicationController
+
+    def show
+        @encuesta = MicroinvalidacionEncuestaInicial.find(params[:id])
+        @user = User.find(params[:user_id])
+    end
+
     def new
         @user = current_user
         if !@user.microinvalidacion_encuesta_inicial.nil?
@@ -19,7 +25,7 @@ class MicroinvalidacionEncuestaInicialsController < ApplicationController
 
         if @encuesta.save
             flash[:notice] = "Encuesta completada con exito"
-            redirect_to microinvalidacion_path(@user.id)
+            redirect_to user_microinvalidacion_encuesta_inicial_path(user_id: @user, id: @encuesta.id)
         else
             flash[:alert] = @encuesta.errors.full_messages.join(', ')
         end

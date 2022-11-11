@@ -1,5 +1,5 @@
 <div class='container text-center'>
-<h2 class="text-4xl font-extrabold dark:text-white mb-4">Encuesta Final de Microinsulto</h2>
+<h2 class="text-4xl font-extrabold dark:text-white mb-4">Encuesta Inicial de Microinvalidación</h2>
 
 
 <h2 class='text-3xl'> Resultado: <%= @encuesta.porcentaje_bueno %>/100 </h2>
@@ -9,12 +9,14 @@
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Pregunta 1: <%= @encuesta.pregunta1 ? "Correcta" : "Incorrecta" %></h5>
     <p class="font-normal text-gray-700 dark:text-gray-400">Elige la definición más adecuada para Microagresión</p>
     <p class="font-normal text-gray-700 dark:text-gray-400">
-        a) Una microagresión es un comentario o acción que se dirige negativamente a un grupo de personas marginado. </br>
-        b) Una microagresión es un comentario accidental que se dirige a personas físicamente diferentes con mala intención.</br>
-        c) Acción violenta que realiza una persona con la intención de causar un daño a otra.</br>
+        a) Hacer que una persona pierda valor ante otros. </br>
+        b) Menospreciar o invalidar experiencias ajenas.</br>
+        c) Es un comentario o acción que es discriminatoria accidentalmente.</br>
+        d) Comportamiento intencional y discriminatorio sin pretensión de ofensa.</br>
+</br>
     </p>
     </br>
-    <b>La respuesta correcta era: a) Una microagresión es un comentario o acción que se dirige negativamente a un grupo de personas marginado.</b>
+    <b>La respuesta correcta era: b) Menospreciar o invalidar experiencias ajenas.</b>
 </a>
 
 
@@ -22,42 +24,44 @@
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Pregunta 2: <%= @encuesta.pregunta2 ? "Correcta" : "Incorrecta" %></h5>
     <p class="font-normal text-gray-700 dark:text-gray-400 ">¿Cuál de las siguientes alternativas es un tipo de microagresión?</p>
     <p class="font-normal text-gray-700 dark:text-gray-400">
-        a) Microinsulto</br>
-        b) Microinvalidación </br>
+        a) Microdiscriminación </br>
+        b) Microinsulto </br>
         c) Microasalto </br>
-        d) Microdiscriminación </br>
+        d) Microinvalidación </br>
         e) Solo a, b y c </br>
-        f) a, b, c y d </br>
+        f) Solo b, c y d </br>
+        g) a, b, c y d </br>
     </p>
     </br>
-    <b>La respuesta correcta era: e) Solo a, b y c</b>
+    <b>La respuesta correcta era: f) Solo b, c y d</b>
 </a>
 
 <a class="block p-6 m-6 max-w bg-white rounded-lg border border-gray-200 shadow-md <%= @encuesta.pregunta3 ? 'bg-green-200' : 'bg-red-200' %>">
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Pregunta 3: <%= @encuesta.pregunta3 ? "Correcta" : "Incorrecta" %></h5>
-    <p class="font-normal text-gray-700 dark:text-gray-400">¿Que es un microinsulto?</p>
+    <p class="font-normal text-gray-700 dark:text-gray-400">Una definición adecuada del tipo Microinvalidación es:</p>
     <p class="font-normal text-gray-700 dark:text-gray-400">
-        a) Es un comentario o acción que es discriminatoria accidentalmente.</br>
-        b) Es una acción agresiva que insulta a otra persona. </br>
-        c) Es un comentario o acción que discrimina. </br>
+        a) Son comentarios que invalidan toda acción de otra persona. </br>
+        b) Son comentarios que invalidan las cosas que dicen personas marginadas. </br>
+        c) Son comentarios de una persona socava o invalida las experiencias de un grupo marginado.  </br>
     </p>
     </br>
-    <b>La respuesta correcta era: a) Es un comentario o acción que es discriminatoria accidentalmente.</b>
+    <b>La respuesta correcta era: c) Son comentarios de una persona socava o invalida las experiencias de un grupo marginado. </b>
 </a>
 
 <a class="block p-6 m-6 max-w bg-white rounded-lg border border-gray-200 shadow-md <%= @encuesta.pregunta4 ? 'bg-green-200' : 'bg-red-200' %>">
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Pregunta 4: <%= @encuesta.pregunta4 ? "Correcta" : "Incorrecta" %></h5>
     <p class="font-normal text-gray-700 dark:text-gray-400">Un ejemplo de microagresión puede ser:</p>
     <p class="font-normal text-gray-700 dark:text-gray-400">
-        a) Decir “Mi jefa está loca”. </br>
-        b) Decirle a alguien “Tu nombre es tan difícil de pronunciar”.  </br>
-        c) Interrumpir a alguien mientras habla.  </br>
-        d) Decirle a una persona delgada que debería comer más.  </br>
-        e) Todas  </br>
-        f) Solo a, b y c  </br>
+        a) Decir “manejas muy bien para ser mujer”. </br>
+        b) Decir algo ofensivo con un “solo estaba bromeando”. </br>
+        c) Decir “el racismo no existe en la sociedad actual”. </br>
+        d) Decirle a una persona que está equivocada. </br>
+        e) Todas </br>
+        f) Solo a, b y c </br>
+
     </p>
     </br>
-    <b>La respuesta correcta era: e) Todas</b>
+    <b>La respuesta correcta era: f) Solo a, b y c </b>
 </a>
 
 <a class="block p-6 m-6 max-w bg-white rounded-lg border border-gray-200 shadow-md <%= @encuesta.pregunta5 ? 'bg-green-200' : 'bg-red-200' %>">
@@ -65,10 +69,10 @@
     <p class="font-normal text-gray-700 dark:text-gray-400">Una definición adecuada del tipo Microasalto es</p>
     <p class="font-normal text-gray-700 dark:text-gray-400">
         a) Es un comentario o acción que es discriminatoria accidentalmente. </br>
-        b) Comportamiento intencional y discriminatorio sin pretensión de ofensa.  </br>
-        c) Menospreciar o invalidar experiencias ajenas.  </br>
-        d) Decirle a una persona delgada que debería comer más.  </br>
-        e) Acción violenta que realiza una persona con la intención de causar un daño a otra. </br> 
+        b) Comportamiento intencional y discriminatorio sin pretensión de ofensa. </br>
+        c) Menospreciar o invalidar experiencias ajenas. </br>
+        d) Acción violenta que realiza una persona con la intención de causar un daño a otra. </br>
+
     </p>
     </br>
     <b>La respuesta correcta era: b) Comportamiento intencional y discriminatorio sin pretensión de ofensa.</b>
@@ -76,16 +80,17 @@
 
 <a class="block p-6 m-6 max-w bg-white rounded-lg border border-gray-200 shadow-md <%= @encuesta.pregunta6 ? 'bg-green-200' : 'bg-red-200' %>">
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Pregunta 6: <%= @encuesta.pregunta6 ? "Correcta" : "Incorrecta" %></h5>
-    <p class="font-normal text-gray-700 dark:text-gray-400">Una definición adecuada para Microinvalidación es</p>
+    <p class="font-normal text-gray-700 dark:text-gray-400">Una definición adecuada para Microinsulto es</p>
     <p class="font-normal text-gray-700 dark:text-gray-400">
-        a) Hacer que una persona pierda valor ante otros. </br>
-        b) Menospreciar o invalidar experiencias ajenas.  </br>
-        c) Es un comentario o acción que es discriminatoria accidentalmente.  </br>
-        d) Comportamiento intencional y discriminatorio sin pretensión de ofensa. </br> 
+        a) Es una acción agresiva que insulta a otra persona. </br>
+        b) Es un comentario o acción que discrimina. </br>
+        c) Es un comentario o acción que es discriminatoria accidentalmente. </br>
+        d) Es un comentario que insulta de forma directa o indirecta. </br>
+
     </p>
     </br>
-    <b>La respuesta correcta era: b) Menospreciar o invalidar experiencias ajenas.</b>
+    <b>La respuesta correcta era: c) Es un comentario o acción que es discriminatoria accidentalmente.</b>
 </a>
 
-<%= link_to "Volver", microinsulto_path(user_id: @user.id),  class:" m-6 float-right text-gray-500 bg-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"%>
+<%= link_to "Volver", microinvalidacion_path(user_id: @user.id),  class:" m-6 float-right text-gray-500 bg-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"%>
 </div>
