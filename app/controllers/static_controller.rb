@@ -9,11 +9,10 @@ class StaticController < ApplicationController
       redirect_to simulaciones_path
     end
 
- 
     @nota1 = @empresa.promedio_encuesta_inicial_microinsulto 
     @nota2 = @empresa.promedio_encuesta_final_microinsulto
     @nota3 = @empresa.promedio_encuesta_inicial_microasalto
-    @nota4 = "0"
+    @nota4 = @empresa.promedio_encuesta_final_microasalto
     @nota5 = @empresa.promedio_encuesta_inicial_microinvalidacion
     @nota6 = @empresa.promedio_encuesta_final_microinvalidacion
 
@@ -32,16 +31,19 @@ class StaticController < ApplicationController
       @nota1 = empresa.promedio_encuesta_inicial_microinsulto 
       @nota2 = empresa.promedio_encuesta_final_microinsulto
       @nota3 = empresa.promedio_encuesta_inicial_microasalto
+      @nota4 = empresa.promedio_encuesta_final_microasalto
       @nota5 = empresa.promedio_encuesta_inicial_microinvalidacion
+      @nota6 = empresa.promedio_encuesta_final_microinvalidacion
+      
     else
       @nota1 = @user.microinsulto_encuesta_inicial.nil? ? "0" : @user.microinsulto_encuesta_inicial.porcentaje_bueno
       @nota2 = @user.microinsulto_encuesta_final.nil? ? "0" : @user.microinsulto_encuesta_final.porcentaje_bueno
       @nota3 = @user.microasalto_encuesta_inicial.nil? ? "0" : @user.microasalto_encuesta_inicial.porcentaje_bueno
+      @nota4 = @user.microasalto_encuesta_final.nil? ? "0" : @user.microasalto_encuesta_final.porcentaje_bueno
       @nota5 = @user.microinvalidacion_encuesta_inicial.nil? ? "0" : @user.microinvalidacion_encuesta_inicial.porcentaje_bueno
       @nota6 = @user.microinvalidacion_encuesta_final.nil? ? "0" : @user.microinvalidacion_encuesta_final.porcentaje_bueno
     end
 
-    @nota4 = "0"
 
   end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_11_213522) do
+ActiveRecord::Schema.define(version: 2022_11_12_212033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 2022_10_11_213522) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "comuna"
     t.string "region"
+  end
+
+  create_table "microasalto_encuesta_finals", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.boolean "pregunta1"
+    t.boolean "pregunta2"
+    t.boolean "pregunta3"
+    t.boolean "pregunta4"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_microasalto_encuesta_finals_on_user_id"
   end
 
   create_table "microasalto_encuesta_inicials", force: :cascade do |t|
@@ -60,6 +71,13 @@ ActiveRecord::Schema.define(version: 2022_10_11_213522) do
     t.boolean "pregunta6"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "respuesta1"
+    t.string "respuesta2"
+    t.string "respuesta3"
+    t.string "respuesta4"
+    t.string "respuesta5"
+    t.string "respuesta6"
+    t.string "respuesta7"
     t.index ["user_id"], name: "index_microinsulto_encuesta_inicials_on_user_id"
   end
 

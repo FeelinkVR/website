@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_one :microinsulto_encuesta_final, dependent: :destroy
 
   has_one :microasalto_encuesta_inicial, dependent: :destroy
+  has_one :microasalto_encuesta_final, dependent: :destroy
 
   has_one :microinvalidacion_encuesta_inicial, dependent: :destroy
   has_one :microinvalidacion_encuesta_final, dependent: :destroy
@@ -51,7 +52,7 @@ class User < ApplicationRecord
   end
 
   def microasalto_encuesta_final
-    MicroinsultoEncuestaFinal.find_by(user_id: self.id) ##PENDIENTE!!
+    MicroasaltoEncuestaFinal.find_by(user_id: self.id)
   end
 
   def microinvalidacion_encuesta_inicial

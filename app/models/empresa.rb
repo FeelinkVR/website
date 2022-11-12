@@ -78,6 +78,26 @@ class Empresa < ApplicationRecord
         end
     end
 
+    def promedio_encuesta_final_microasalto
+        promedio = 0
+        encuestas_iniciales = []
+        self.empleados.each do |empleado|
+            if !empleado.microasalto_encuesta_final.nil?
+                encuestas_iniciales << empleado.microasalto_encuesta_final
+            end
+        end
+        if !encuestas_iniciales.empty?
+            cant_encuestas = encuestas_iniciales.length()
+            suma = 0
+            encuestas_iniciales.each do |encuesta|
+                suma += encuesta.porcentaje_bueno
+            end
+            promedio = suma/cant_encuestas
+        else
+            0
+        end
+    end
+
     def promedio_encuesta_inicial_microinvalidacion
         promedio = 0
         encuestas_iniciales = []

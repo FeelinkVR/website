@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :microinsulto_encuesta_finals
 
     resources :microasalto_encuesta_inicials
+    resources :microasalto_encuesta_finals
 
     resources :microinvalidacion_encuesta_inicials
     resources :microinvalidacion_encuesta_finals
