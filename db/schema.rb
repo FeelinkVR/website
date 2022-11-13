@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_12_212033) do
+ActiveRecord::Schema.define(version: 2022_11_13_184432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2022_11_12_212033) do
     t.boolean "pregunta6"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "pregunta7"
     t.index ["user_id"], name: "index_microasalto_encuesta_inicials_on_user_id"
   end
 
@@ -71,13 +72,7 @@ ActiveRecord::Schema.define(version: 2022_11_12_212033) do
     t.boolean "pregunta6"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "respuesta1"
-    t.string "respuesta2"
-    t.string "respuesta3"
-    t.string "respuesta4"
-    t.string "respuesta5"
-    t.string "respuesta6"
-    t.string "respuesta7"
+    t.boolean "pregunta7"
     t.index ["user_id"], name: "index_microinsulto_encuesta_inicials_on_user_id"
   end
 
@@ -102,6 +97,7 @@ ActiveRecord::Schema.define(version: 2022_11_12_212033) do
     t.boolean "pregunta6"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "pregunta7"
     t.index ["user_id"], name: "index_microinvalidacion_encuesta_inicials_on_user_id"
   end
 

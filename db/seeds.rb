@@ -59,24 +59,35 @@ Simulation.create(user_id: 7, tipo: "Microinvalidacion", perspectiva: "Victimari
 #--------------------Encuestas----------------------------
 
 #MICROINSULTO
-MicroinsultoEncuestaInicial.create(user_id: 4, pregunta1: true, pregunta2: true ,pregunta3: true, pregunta4: false,pregunta5: false , pregunta6: false)
-MicroinsultoEncuestaInicial.create(user_id: 5, pregunta1: false, pregunta2: true ,pregunta3: true, pregunta4: false,pregunta5: false , pregunta6: false)
-MicroinsultoEncuestaInicial.create(user_id: 6, pregunta1: false, pregunta2: false ,pregunta3: true, pregunta4: false,pregunta5: false , pregunta6: false)
-MicroinsultoEncuestaInicial.create(user_id: 7, pregunta1: false, pregunta2: false ,pregunta3: true, pregunta4: false,pregunta5: false , pregunta6: false)
+MicroinsultoEncuestaInicial.create(user_id: 4, pregunta1: true,  pregunta2: true ,  pregunta3: true, pregunta4: false, pregunta5: false, pregunta6: false, pregunta7: true)
+MicroinsultoEncuestaInicial.create(user_id: 5, pregunta1: false, pregunta2: true ,  pregunta3: true, pregunta4: false, pregunta5: false, pregunta6: false, pregunta7: true)
+MicroinsultoEncuestaInicial.create(user_id: 6, pregunta1: false, pregunta2: false , pregunta3: true, pregunta4: false, pregunta5: false, pregunta6: false, pregunta7: false)
+MicroinsultoEncuestaInicial.create(user_id: 7, pregunta1: false, pregunta2: false , pregunta3: true, pregunta4: false, pregunta5: false, pregunta6: false, pregunta7: nil)
 
-MicroinsultoEncuestaFinal.create(user_id: 4, pregunta1: true, pregunta2: true ,pregunta3: true)
-MicroinsultoEncuestaFinal.create(user_id: 5, pregunta1: true, pregunta2: true ,pregunta3: true)
-MicroinsultoEncuestaFinal.create(user_id: 6, pregunta1: true, pregunta2: true ,pregunta3: false)
-MicroinsultoEncuestaFinal.create(user_id: 7, pregunta1: true, pregunta2: true ,pregunta3: false)
+MicroinsultoEncuestaFinal.create(user_id: 4, pregunta1: true, pregunta2: true, pregunta3: true,  pregunta4: true)
+MicroinsultoEncuestaFinal.create(user_id: 5, pregunta1: true, pregunta2: true, pregunta3: true,  pregunta4: true)
+MicroinsultoEncuestaFinal.create(user_id: 6, pregunta1: true, pregunta2: true, pregunta3: false, pregunta4: false)
+MicroinsultoEncuestaFinal.create(user_id: 7, pregunta1: true, pregunta2: true, pregunta3: false, pregunta4: nil)
+
+#MICROASALTO
+MicroasaltoEncuestaInicial.create(user_id: 4, pregunta1: false,  pregunta2: true ,  pregunta3: false, pregunta4: false, pregunta5: false, pregunta6: false, pregunta7: true)
+MicroasaltoEncuestaInicial.create(user_id: 5, pregunta1: false, pregunta2: true ,  pregunta3: true, pregunta4: false, pregunta5: false, pregunta6: false, pregunta7: true)
+MicroasaltoEncuestaInicial.create(user_id: 6, pregunta1: false, pregunta2: true , pregunta3: false, pregunta4: false, pregunta5: false, pregunta6: false, pregunta7: false)
+MicroasaltoEncuestaInicial.create(user_id: 7, pregunta1: false, pregunta2: false , pregunta3: true, pregunta4: false, pregunta5: false, pregunta6: false, pregunta7: nil)
+
+MicroasaltoEncuestaFinal.create(user_id: 4, pregunta1: true, pregunta2: true, pregunta3: false,  pregunta4: true)
+MicroasaltoEncuestaFinal.create(user_id: 5, pregunta1: true, pregunta2: true, pregunta3: false,  pregunta4: true)
+MicroasaltoEncuestaFinal.create(user_id: 6, pregunta1: true, pregunta2: true, pregunta3: false, pregunta4: false)
+MicroasaltoEncuestaFinal.create(user_id: 7, pregunta1: true, pregunta2: true, pregunta3: false, pregunta4: nil)
 
 #MICROINVALIDACION
-MicroinvalidacionEncuestaInicial.create(user_id: 4, pregunta1: true, pregunta2: true , pregunta3: true, pregunta4: true, pregunta5: true, pregunta6: false)
-MicroinvalidacionEncuestaInicial.create(user_id: 5, pregunta1: false, pregunta2: true , pregunta3: true, pregunta4: false, pregunta5: false, pregunta6: true)
-MicroinvalidacionEncuestaInicial.create(user_id: 6, pregunta1: false, pregunta2: false , pregunta3: true, pregunta4: true, pregunta5: false, pregunta6: false)
-MicroinvalidacionEncuestaInicial.create(user_id: 7, pregunta1: false, pregunta2: true , pregunta3: true, pregunta4: false, pregunta5: false, pregunta6: false)
+MicroinvalidacionEncuestaInicial.create(user_id: 4, pregunta1: true,  pregunta2: true,  pregunta3: true, pregunta4: true,  pregunta5: true,  pregunta6: false, pregunta7: true)
+MicroinvalidacionEncuestaInicial.create(user_id: 5, pregunta1: false, pregunta2: true,  pregunta3: true, pregunta4: false, pregunta5: false, pregunta6: true,  pregunta7: true)
+MicroinvalidacionEncuestaInicial.create(user_id: 6, pregunta1: false, pregunta2: false, pregunta3: true, pregunta4: true,  pregunta5: false, pregunta6: false, pregunta7: false)
+MicroinvalidacionEncuestaInicial.create(user_id: 7, pregunta1: false, pregunta2: true,  pregunta3: true, pregunta4: false, pregunta5: false, pregunta6: false, pregunta7: nil)
 
-MicroinvalidacionEncuestaFinal.create(user_id: 4, pregunta1: true, pregunta2: true, pregunta3: true)
-MicroinvalidacionEncuestaFinal.create(user_id: 5, pregunta1: true, pregunta2: true, pregunta3: true)
-MicroinvalidacionEncuestaFinal.create(user_id: 6, pregunta1: true, pregunta2: true, pregunta3: true)
-MicroinvalidacionEncuestaFinal.create(user_id: 7, pregunta1: true, pregunta2: false, pregunta3: true)
+MicroinvalidacionEncuestaFinal.create(user_id: 4, pregunta1: true, pregunta2: true,  pregunta3: true, pregunta4: true)
+MicroinvalidacionEncuestaFinal.create(user_id: 5, pregunta1: true, pregunta2: true,  pregunta3: true, pregunta4: true)
+MicroinvalidacionEncuestaFinal.create(user_id: 6, pregunta1: true, pregunta2: true,  pregunta3: true, pregunta4: false)
+MicroinvalidacionEncuestaFinal.create(user_id: 7, pregunta1: true, pregunta2: false, pregunta3: true, pregunta4: nil)
 

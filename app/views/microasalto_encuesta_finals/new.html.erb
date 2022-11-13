@@ -91,8 +91,8 @@
             <h3 class="fs-subtitle">¿Alguna vez has visto en lugar de trabajo una situación similar?</h3>
             <div class ="field-buttons">
                 <div class="radio-button"> <%= f.radio_button :pregunta4, true %> Si</div>
-                <div class="radio-button"> <%= f.radio_button :pregunta4, true %> No</div>
-                <div class="radio-button"> <%= f.radio_button :pregunta4, true %> Quizás</div>
+                <div class="radio-button"> <%= f.radio_button :pregunta4, false %> No</div>
+                <div class="radio-button"> <%= f.radio_button :pregunta4, nil %> Quizás</div>
             </div> 
             <input type="button" name="previous" class="previous-microasalto-final" value="Atrás" />
             <%= f.submit "Enviar", class: "next-microasalto-final"%>

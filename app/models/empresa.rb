@@ -177,4 +177,70 @@ class Empresa < ApplicationRecord
         end
         contador/total.to_f
     end
+
+    def presencia_microinsultos
+        yes = 0
+        no = 0
+        not_sure = 0
+        total = 0 
+
+        self.empleados.each do |empleado|
+            if !empleado.microinsulto_encuesta_inicial.nil?
+                case empleado.microinsulto_encuesta_inicial.pregunta7
+                when nil
+                    not_sure += 1
+                when true
+                    yes += 1
+                when false
+                    no += 1
+                end
+                total += 1
+            end
+        end
+        resultados = [yes,no,not_sure, total]
+    end
+
+    def presencia_microasaltos
+        yes = 0
+        no = 0
+        not_sure = 0
+        total = 0 
+
+        self.empleados.each do |empleado|
+            if !empleado.microasalto_encuesta_inicial.nil?
+                case empleado.microasalto_encuesta_inicial.pregunta7
+                when nil
+                    not_sure += 1
+                when true
+                    yes += 1
+                when false
+                    no += 1
+                end
+                total += 1
+            end
+        end
+        resultados = [yes,no,not_sure, total]
+    end
+
+    def presencia_microinvalidaciones
+        yes = 0
+        no = 0
+        not_sure = 0
+        total = 0 
+
+        self.empleados.each do |empleado|
+            if !empleado.microinvalidacion_encuesta_inicial.nil?
+                case empleado.microinvalidacion_encuesta_inicial.pregunta7
+                when nil
+                    not_sure += 1
+                when true
+                    yes += 1
+                when false
+                    no += 1
+                end
+                total += 1
+            end
+        end
+        resultados = [yes,no,not_sure, total]
+    end
 end

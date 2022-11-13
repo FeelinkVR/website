@@ -36,7 +36,7 @@ class MicroinvalidacionEncuestaInicialsController < ApplicationController
     def create_params
         if params.has_key?(:microinvalidacion_encuesta_inicial)
             params.fetch(:microinvalidacion_encuesta_inicial)
-            .permit(:pregunta1, :pregunta2, :pregunta3, :pregunta4, :pregunta5, :pregunta6)
+            .permit(:pregunta1, :pregunta2, :pregunta3, :pregunta4, :pregunta5, :pregunta6, :pregunta7)
         end
     end
 end

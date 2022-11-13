@@ -117,10 +117,8 @@
 
             <div class ="field-buttons">
                 <div class="radio-button"> <%= f.radio_button :pregunta7, true %> a) Si.</div>
-                <div class="radio-button"> <%= f.radio_button :pregunta7, true %> b) No. </div>
-                <div class="radio-button"> <%= f.radio_button :pregunta7, true %> c) No estoy seguro/a. </div>
-                <div class="radio-button"> <%= f.radio_button :pregunta7, true %> d) Microdiscriminación </div>
-                <div class="radio-button"> <%= f.radio_button :pregunta7, true %> e) Comportamiento intencional y discriminatorio sin pretensión de ofensa. </div>
+                <div class="radio-button"> <%= f.radio_button :pregunta7, false %> b) No. </div>
+                <div class="radio-button"> <%= f.radio_button :pregunta7, nil %> c) No estoy seguro/a. </div>
             </div> 
 
             <input type="button" name="previous" class="previous action-button" value="Atras" />
