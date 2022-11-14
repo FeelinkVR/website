@@ -16,6 +16,10 @@ class StaticController < ApplicationController
     @nota5 = @empresa.promedio_encuesta_inicial_microinvalidacion
     @nota6 = @empresa.promedio_encuesta_final_microinvalidacion
 
+    @presencia_yes = @empresa.presencia_microinsultos[0] + @empresa.presencia_microasaltos[0] + @empresa.presencia_microinvalidaciones[0]
+    @presencia_no = @empresa.presencia_microinsultos[1] + @empresa.presencia_microasaltos[1] + @empresa.presencia_microinvalidaciones[1]
+    @presencia_quizas = @empresa.presencia_microinsultos[2] + @empresa.presencia_microasaltos[2] + @empresa.presencia_microinvalidaciones[2]
+
   end
 
   def global

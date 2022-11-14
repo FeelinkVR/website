@@ -19,16 +19,16 @@
 
 <!-- Chart radar -->
 <script>
-  var charbar = document.getElementById("chartRadar");
-  var negativo_testigo = charbar.getAttribute('negativo_testigo');
-  var neutro_testigo = charbar.getAttribute('neutro_testigo');
-  var positivo_testigo = charbar.getAttribute('positivo_testigo');
-  var negativo_victima = charbar.getAttribute('negativo_victima');
-  var neutro_victima = charbar.getAttribute('neutro_victima');
-  var positivo_victima = charbar.getAttribute('positivo_victima');
-  var negativo_victimario = charbar.getAttribute('negativo_victimario');
-  var neutro_victimario = charbar.getAttribute('neutro_victimario');
-  var positivo_victimario = charbar.getAttribute('positivo_victimario');
+  var charradar = document.getElementById("chartRadar");
+  var negativo_testigo = charradar.getAttribute('negativo_testigo');
+  var neutro_testigo = charradar.getAttribute('neutro_testigo');
+  var positivo_testigo = charradar.getAttribute('positivo_testigo');
+  var negativo_victima = charradar.getAttribute('negativo_victima');
+  var neutro_victima = charradar.getAttribute('neutro_victima');
+  var positivo_victima = charradar.getAttribute('positivo_victima');
+  var negativo_victimario = charradar.getAttribute('negativo_victimario');
+  var neutro_victimario = charradar.getAttribute('neutro_victimario');
+  var positivo_victimario = charradar.getAttribute('positivo_victimario');
 
 
 
@@ -89,7 +89,7 @@
   };
 
   var chartBar = new Chart(
-    document.getElementById("chartRadar"),
+    charradar,
     configRadarChart
   );
 </script>

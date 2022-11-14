@@ -15,4 +15,11 @@
         <%= render "static/sections/grafico_torta" , user: @user, realizadas: @empresa.cantidad_simulaciones_realizadas, pendientes: @empresa.cantidad_simulaciones_pendientes%>
     </div>
 
+
+        <div class ="tendencias-general">
+        <h2 class="text-3xl font-extrabold dark:text-white my-4">Resultados Presencia Migroagresiones</h2>
+        <p class="mb-3 text-lg font-light text-gray-500 md:text-xl dark:text-gray-400"></p>
+        <%= render "static/sections/grafico_radial", presencia_yes: @presencia_yes, presencia_no: @presencia_no, presencia_quizas: @presencia_quizas  %>
+    </div>
+
 </section>
