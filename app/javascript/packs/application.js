@@ -13,6 +13,8 @@ require("packs/microinsulto_encuesta_inicial")
 require("packs/microinvalidacion_encuesta_inicial")
 require("packs/microinsulto_encuesta_final")
 require("packs/microinvalidacion_encuesta_final")
+require("packs/microasalto_encuesta_inicial")
+require("packs/microasalto_encuesta_final")
 
 import '../css/application.scss'
 import 'flowbite';

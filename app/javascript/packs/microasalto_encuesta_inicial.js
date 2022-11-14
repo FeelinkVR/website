@@ -8,10 +8,14 @@ $(document).on("turbolinks:load", function() {
 
     var back = 0;
     var next = true;
-    var pregunta1 = $("[name='microinvalidacion_encuesta_final[pregunta1]']");
-    var pregunta2 = $("[name='microinvalidacion_encuesta_final[pregunta2]']");
-    var pregunta3 = $("[name='microinvalidacion_encuesta_final[pregunta3]']");
-    var pregunta4 = $("[name='microinvalidacion_encuesta_final[pregunta4]']");
+    var pregunta1 = $("[name='microasalto_encuesta_inicial[pregunta1]']");
+    var pregunta2 = $("[name='microasalto_encuesta_inicial[pregunta2]']");
+    var pregunta3 = $("[name='microasalto_encuesta_inicial[pregunta3]']");
+    var pregunta4 = $("[name='microasalto_encuesta_inicial[pregunta4]']");
+    var pregunta5 = $("[name='microasalto_encuesta_inicial[pregunta5]']");
+    var pregunta6 = $("[name='microasalto_encuesta_inicial[pregunta6]']");
+    var pregunta7 = $("[name='microasalto_encuesta_inicial[pregunta7]']");
+
 
     pregunta1.on("click", function() {
         next = true;
@@ -25,8 +29,17 @@ $(document).on("turbolinks:load", function() {
     pregunta4.on("click", function() {
         next = true;
     });
+    pregunta5.on("click", function() {
+        next = true;
+    });
+    pregunta6.on("click", function() {
+        next = true;
+    });
+    pregunta7.on("click", function() {
+        next = true;
+    });
 
-    $(".next-microinvalidacion-final").click(function() {
+    $(".next-microasalto-inicial").click(function() {
         if (next) {
             if (animating) return false;
             animating = true;
@@ -35,7 +48,7 @@ $(document).on("turbolinks:load", function() {
             next_fs = $(this).parent().next();
 
             //activate next step on progressbar using the index of next_fs
-            $("#progressbar-microinvalidacion-final li").eq($("fieldset").index(next_fs)).addClass("active");
+            $("#progressbar-microasalto-inicial li").eq($("fieldset").index(next_fs)).addClass("active");
 
             //show the next fieldset
             next_fs.show();
@@ -69,7 +82,7 @@ $(document).on("turbolinks:load", function() {
             next = false;
         }
     });
-    $(".previous-microinvalidacion-incial").click(function() {
+    $(".previous-microasalto-incial").click(function() {
         if (animating) return false;
         animating = true;
 
@@ -77,7 +90,7 @@ $(document).on("turbolinks:load", function() {
         previous_fs = $(this).parent().prev();
 
         //de-activate current step on progressbar
-        $("#progressbar-microinvalidacion-final li").eq($("fieldset").index(current_fs)).removeClass("active");
+        $("#progressbar-microasalto-inicial li").eq($("fieldset").index(current_fs)).removeClass("active");
 
         //show the previous fieldset
         previous_fs.show();

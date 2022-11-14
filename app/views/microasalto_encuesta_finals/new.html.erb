@@ -25,8 +25,8 @@
             <h3 class="fs-subtitle">De acuerdo a la simulación, ¿qué crees que se pudo evidenciar?</h3>
 
             <div class ="field-buttons">
-                <div class="radio-button"> <%= f.radio_button :pregunta1, true %> a) Comentario o acción discriminatoria de manera sutil.</div>
-                <div class="radio-button"> <%= f.radio_button :pregunta1, false %> b) Comportamiento intencional y discriminatorio sin pretensión de ofensa. </div>
+                <div class="radio-button"> <%= f.radio_button :pregunta1, false %> a) Comentario o acción discriminatoria de manera sutil.</div>
+                <div class="radio-button"> <%= f.radio_button :pregunta1, true %> b) Comportamiento intencional y discriminatorio sin pretensión de ofensa. </div>
                 <div class="radio-button"> <%= f.radio_button :pregunta1, false %> c) Minimización de experiencias ajenas. </div>
                 <div class="radio-button"> <%= f.radio_button :pregunta1, false %> d) No hubo ningún comentario o acción inadecuada. </div>
             </div> 
@@ -45,9 +45,9 @@
             En la/s simulación/es realizada/s recientemente, cuál definición describe de mejor manera lo que usted experimentó:
             </b><br/>
             <div class ="field-buttons">
-                <div class="radio-button"><%= f.radio_button :pregunta2, false %>Solo I</div>
+                <div class="radio-button"><%= f.radio_button :pregunta2, true %>Solo I</div>
                 <div class="radio-button"><%= f.radio_button :pregunta2, false %>Solo II</div>
-                <div class="radio-button"><%= f.radio_button :pregunta2, true %>Solo III</div>
+                <div class="radio-button"><%= f.radio_button :pregunta2, false %>Solo III</div>
                 <div class="radio-button"><%= f.radio_button :pregunta2, false %>I y II</div>
                 <div class="radio-button"><%= f.radio_button :pregunta2, false %>I y III</div>
                 <div class="radio-button"><%= f.radio_button :pregunta2, false %>Ninguna de las anteriores</div>

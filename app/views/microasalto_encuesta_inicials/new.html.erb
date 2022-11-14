@@ -1,9 +1,13 @@
+<div class='container text-center'>
+    <h2 class="text-4xl font-extrabold dark:text-white mb-4">Encuesta Inicial de Microasalto</h2>
+
 <%= form_for :microasalto_encuesta_inicial, url: user_microasalto_encuesta_inicials_path(user_id: current_user.id), method: :post do |f| %>
     <!-- multistep form -->
-    <div id="msform">
+    <div id="form-microasalto-inicial">
         <!-- progressbar -->
-        <ul id="progressbar">
+        <ul id="progressbar-microasalto-inicial">
             <li class="active"></li>
+            <li></li>
             <li></li>
             <li></li>
             <li></li>
@@ -13,103 +17,101 @@
         </ul>
         <!-- fieldsets -->
         <fieldset>
+            <h2 class="fs-title">Instrucciones</h2>
+            <div class="mb-5">
+                Lee atentamente las preguntas y responde según lo que consideres correcto.<br/>
+                <b>[Confidencialidad]</b> Recuerda que los resultados se mostrarán de forma general y no en detalle.</b> 
+            </div>
+            <input type="button" name="next" class="next-microasalto-inicial" value="Siguiente" />
+        </fieldset>
+        <fieldset>
             <h2 class="fs-title">Pregunta 1</h2>
-            <h3 class="fs-subtitle">Elige la definición más adecuada para Microagresión</h3>
+            <h3 class="fs-subtitle">Elige la definición más adecuada para Microasalto</h3>
              <!--<p class="help-block">List your strengths here.</p>--> 
             <div class ="field-buttons">
-                <div class="radio-button">
-                    <%= f.radio_button :pregunta1, true %>
-                    <p>a) Una microagresión es un comentario o acción que se dirige negativamente a un grupo de personas marginado.</p>
-                </div>
-
-                <div class="radio-button">
-                    <%= f.radio_button :pregunta1, false %>
-                    b) Una microagresión es un comentario accidental que se dirige a personas físicamente diferentes con mala intención.
-                </div>
-
-                <div class="radio-button">
-                    <%= f.radio_button :pregunta1, false %>
-                    c) Acción violenta que realiza una persona con la intención de causar un daño a otra.
-                </div>
+                <div class="radio-button"> <%= f.radio_button :pregunta1, false %> <p> a) Hacer que una persona pierda valor ante otros.</p> </div>
+                <div class="radio-button"> <%= f.radio_button :pregunta1, false %> b) Menospreciar o invalidar experiencias ajenas. </div>
+                <div class="radio-button"> <%= f.radio_button :pregunta1, false %> c) Es un comentario o acción que es discriminatoria accidentalmente. </div>
+                <div class="radio-button"> <%= f.radio_button :pregunta1, true %> d) Comportamiento intencional y discriminatorio sin pretensión de ofensa. </div>
             </div> 
-
-            <input type="button" name="previous" class="previous action-button" value="Atras" />
-            <input type="button" name="next" class="next action-button" value="Siguiente" />
+            <input type="button" name="previous" class="previous-microasalto-incial" value="Atrás" />
+            <input type="button" name="next" class="next-microasalto-inicial" value="Siguiente" />
         </fieldset>
+
         <fieldset>
             <h2 class="fs-title">Pregunta 2</h2>
             <h3 class="fs-subtitle">¿Cuál de las siguientes alternativas es un tipo de microagresión?</h3>
 
             <div class ="field-buttons">
-                <div class="radio-button"> <%= f.radio_button :pregunta2, false %> a) Microinsulto</div>
-                <div class="radio-button"> <%= f.radio_button :pregunta2, false %> b) Microinvalidación </div>
+                <div class="radio-button"> <%= f.radio_button :pregunta2, false %> a) Microdiscriminación</div>
+                <div class="radio-button"> <%= f.radio_button :pregunta2, false %> b) Microinsulto </div>
                 <div class="radio-button"> <%= f.radio_button :pregunta2, false %> c) Microasalto </div>
-                <div class="radio-button"> <%= f.radio_button :pregunta2, false %> d) Microdiscriminación </div>
-                <div class="radio-button"> <%= f.radio_button :pregunta2, true %> e) Solo a, b y c </div>
-                <div class="radio-button"> <%= f.radio_button :pregunta2, false %> f) a, b, c y d </div>
+                <div class="radio-button"> <%= f.radio_button :pregunta2, false %> d) Microinvalidación </div>
+                <div class="radio-button"> <%= f.radio_button :pregunta2, false %> e) Solo a, b y c </div>
+                <div class="radio-button"> <%= f.radio_button :pregunta2, true %> f) Solo b, c y d</div>
+                <div class="radio-button"> <%= f.radio_button :pregunta2, false %> g) Solo a, b, c y d</div>
             </div> 
     
-            <input type="button" name="previous" class="previous action-button" value="Atras" />
-            <input type="button" name="next" class="next action-button" value="Siguiente" />
+            <input type="button" name="previous" class="previous-microasalto-incial" value="Atrás" />
+            <input type="button" name="next" class="next-microasalto-inicial" value="Siguiente" />
         </fieldset>
         <fieldset>
 
             <h2 class="fs-title">Pregunta 3</h2>
-            <h3 class="fs-subtitle"> ¿Que es un microinsulto? </h3>
+            <h3 class="fs-subtitle"> Una definición adecuada del tipo Microasalto es: </h3>
 
             <div class ="field-buttons">
-                <div class="radio-button"> <%= f.radio_button :pregunta3, true %> a) Es un comentario o acción que es discriminatoria accidentalmente.</div>
-                <div class="radio-button"> <%= f.radio_button :pregunta3, false %> b) Es una acción agresiva que insulta a otra persona. </div>
-                <div class="radio-button"> <%= f.radio_button :pregunta3, false %> c) Es un comentario o acción que discrimina. </div>
+                <div class="radio-button"> <%= f.radio_button :pregunta3, false %> a) Son comentarios que invalidan toda acción de otra persona.</div>
+                <div class="radio-button"> <%= f.radio_button :pregunta3, false %> b) Son comentarios que invalidan las cosas que dicen personas marginadas. </div>
+                <div class="radio-button"> <%= f.radio_button :pregunta3, true %> c) Son comentarios intencionalmente discriminatorios, aunque no pretendan ser ofensivos. </div>
             </div> 
 
-            <input type="button" name="previous" class="previous action-button" value="Atras" />
-            <input type="button" name="next" class="next action-button" value="Siguiente" />
+            <input type="button" name="previous" class="previous-microasalto-incial" value="Atrás" />
+            <input type="button" name="next" class="next-microasalto-inicial" value="Siguiente" />
         </fieldset>
         <fieldset>
             <h2 class="fs-title">Pregunta 4</h2>
             <h3 class="fs-subtitle">Un ejemplo de microagresión puede ser:</h3>
 
             <div class ="field-buttons">
-                <div class="radio-button"> <%= f.radio_button :pregunta4, false %> a) Decir “Mi jefa está loca”.</div>
-                <div class="radio-button"> <%= f.radio_button :pregunta4, false %> b) Decirle a alguien “Tu nombre es tan difícil de pronunciar”. </div>
-                <div class="radio-button"> <%= f.radio_button :pregunta4, false %> c) Interrumpir a alguien mientras habla. </div>
-                <div class="radio-button"> <%= f.radio_button :pregunta4, false %> d) Decirle a una persona delgada que debería comer más. </div>
-                <div class="radio-button"> <%= f.radio_button :pregunta4, true %> e) Todas </div>
-                <div class="radio-button"> <%= f.radio_button :pregunta4, false %> f) Solo a, b y c </div>
+                <div class="radio-button"> <%= f.radio_button :pregunta4, false %> a) Decir “manejas muy bien para ser mujer”.</div>
+                <div class="radio-button"> <%= f.radio_button :pregunta4, false %> b) Decir algo ofensivo con un “solo estaba bromeando”. </div>
+                <div class="radio-button"> <%= f.radio_button :pregunta4, false %> c) Decir “el racismo no existe en la sociedad actual”. </div>
+                <div class="radio-button"> <%= f.radio_button :pregunta4, false %> d) Decirle a una persona que está equivocada. </div>
+                <div class="radio-button"> <%= f.radio_button :pregunta4, false %> e) Todas </div>
+                <div class="radio-button"> <%= f.radio_button :pregunta4, true %> f) Solo a, b y c </div>
             </div> 
 
-            <input type="button" name="previous" class="previous action-button" value="Atras" />
-            <input type="button" name="next" class="next action-button" value="Siguiente" />
+            <input type="button" name="previous" class="previous-microasalto-incial" value="Atrás" />
+            <input type="button" name="next" class="next-microasalto-inicial" value="Siguiente" />
     </fieldset>
         <fieldset>
             <h2 class="fs-title">Pregunta 5</h2>
-            <h3 class="fs-subtitle">Una definición adecuada del tipo Microataque es</h3>
+            <h3 class="fs-subtitle">Una definición adecuada del tipo Microasalto es</h3>
 
             <div class ="field-buttons">
                 <div class="radio-button"> <%= f.radio_button :pregunta5, false %> a) Es un comentario o acción que es discriminatoria accidentalmente.</div>
                 <div class="radio-button"> <%= f.radio_button :pregunta5, true %> b) Comportamiento intencional y discriminatorio sin pretensión de ofensa. </div>
                 <div class="radio-button"> <%= f.radio_button :pregunta5, false %> c) Menospreciar o invalidar experiencias ajenas. </div>
-                <div class="radio-button"> <%= f.radio_button :pregunta5, false %> d) Decirle a una persona delgada que debería comer más. </div>
-                <div class="radio-button"> <%= f.radio_button :pregunta5, true %> e) Acción violenta que realiza una persona con la intención de causar un daño a otra. </div>
+                <div class="radio-button"> <%= f.radio_button :pregunta5, false %> e) Acción violenta que realiza una persona con la intención de causar un daño a otra. </div>
             </div> 
 
-            <input type="button" name="previous" class="previous action-button" value="Atras" />
-            <input type="button" name="next" class="next action-button" value="Siguiente" />
+            <input type="button" name="previous" class="previous-microasalto-incial" value="Atrás" />
+            <input type="button" name="next" class="next-microasalto-inicial" value="Siguiente" />
         </fieldset>
         <fieldset>
             <h2 class="fs-title">Pregunta 6</h2>
-            <h3 class="fs-subtitle">Una definición adecuada para Microinvalidación es</h3>
+            <h3 class="fs-subtitle">Una definición adecuada para Microinsulto es</h3>
 
             <div class ="field-buttons">
-                <div class="radio-button"> <%= f.radio_button :pregunta6, false %> a) Hacer que una persona pierda valor ante otros.</div>
-                <div class="radio-button"> <%= f.radio_button :pregunta6, true %> b) Menospreciar o invalidar experiencias ajenas. </div>
-                <div class="radio-button"> <%= f.radio_button :pregunta6, false %> c) Es un comentario o acción que es discriminatoria accidentalmente. </div>
-                <div class="radio-button"> <%= f.radio_button :pregunta6, false %> d) Comportamiento intencional y discriminatorio sin pretensión de ofensa. </div>
+                <div class="radio-button"> <%= f.radio_button :pregunta6, false %> a) Es una acción agresiva que insulta a otra persona.</div>
+                <div class="radio-button"> <%= f.radio_button :pregunta6, false %> b) Es un comentario o acción que discrimina. </div>
+                <div class="radio-button"> <%= f.radio_button :pregunta6, true %> c) Es un comentario o acción que es discriminatoria accidentalmente. </div>
+                <div class="radio-button"> <%= f.radio_button :pregunta6, false %> d) Es un comentario que insulta de forma directa o indirecta. </div>
             </div> 
 
-            <input type="button" name="previous" class="previous action-button" value="Atras" />
-            <input type="button" name="next" class="next action-button" value="Siguiente" />
+            <input type="button" name="previous" class="previous-microasalto-incial" value="Atrás" />
+            <input type="button" name="next" class="next-microasalto-inicial" value="Siguiente" />
         </fieldset>
         <fieldset>
             <h2 class="fs-title">Pregunta 7</h2>
@@ -118,15 +120,15 @@
             <div class ="field-buttons">
                 <div class="radio-button"> <%= f.radio_button :pregunta7, true %> a) Si.</div>
                 <div class="radio-button"> <%= f.radio_button :pregunta7, false %> b) No. </div>
-                <div class="radio-button"> <%= f.radio_button :pregunta7, nil %> c) No estoy seguro/a. </div>
+                <div class="radio-button"> <%= f.radio_button :pregunta7, nil %> c) No estoy seguro/a. </div>     
             </div> 
 
-            <input type="button" name="previous" class="previous action-button" value="Atras" />
-            <%= f.submit "Enviar", class: "next boton-enviar"%>
+            <input type="button" name="previous" class="previous-microasalto-incial" value="Atrás" />
+            <%= f.submit "Enviar", class: "boton-enviar"%>
         </fieldset>
     </div>
 <% end %>
-
+</div>
 <!-- jQuery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 <!-- jQuery easing plugin -->
