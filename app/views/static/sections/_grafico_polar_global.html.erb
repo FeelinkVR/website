@@ -1,0 +1,95 @@
+<div class="grafico-polar shadow-lg  rounded-lg overflow-hidden">
+  <canvas 
+  class="p-10" 
+  id="chartRadar"
+  negativo_testigo= <%= @contador1%>
+  neutro_testigo= <%= @contador2 %>
+  positivo_testigo= <%= @contador3 %>
+  negativo_victima= <%= @contador4 %>
+  neutro_victima= <%= @contador5 %>
+  positivo_victima= <%= @contador6 %>
+  negativo_victimario= <%= @contador7 %>
+  neutro_victimario= <%= @contador8 %>
+  positivo_victimario= <%= @contador9 %>
+  ></canvas>
+</div>
+
+<!-- Required chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Chart radar -->
+<script>
+  var charbar = document.getElementById("chartRadar");
+  var negativo_testigo = charbar.getAttribute('negativo_testigo');
+  var neutro_testigo = charbar.getAttribute('neutro_testigo');
+  var positivo_testigo = charbar.getAttribute('positivo_testigo');
+  var negativo_victima = charbar.getAttribute('negativo_victima');
+  var neutro_victima = charbar.getAttribute('neutro_victima');
+  var positivo_victima = charbar.getAttribute('positivo_victima');
+  var negativo_victimario = charbar.getAttribute('negativo_victimario');
+  var neutro_victimario = charbar.getAttribute('neutro_victimario');
+  var positivo_victimario = charbar.getAttribute('positivo_victimario');
+
+
+
+  const dataRadar = {
+    labels: [
+      "Intervención Positiva",
+      "Intervención Negativa",
+      "Intervención Neutra",
+    ],
+    datasets: [
+      {
+        label: "Testigo",
+        data: [positivo_testigo, negativo_testigo, neutro_testigo],
+        fill: true,
+        backgroundColor: "rgba(133, 105, 241, 0.2)",
+        borderColor: "rgb(133, 105, 241)",
+        pointBackgroundColor: "rgb(133, 105, 241)",
+        pointBorderColor: "#fff",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "rgb(133, 105, 241)",
+      },
+      {
+        label: "Victima",
+        data: [positivo_victima, negativo_victima, neutro_victima],
+        fill: true,
+        backgroundColor: "rgba(54, 162, 235, 0.2)",
+        borderColor: "rgb(54, 162, 235)",
+        pointBackgroundColor: "rgb(54, 162, 235)",
+        pointBorderColor: "#fff",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "rgb(54, 162, 235)",
+      },
+      {
+        label: "Victimario",
+        data: [positivo_victimario, negativo_victimario, neutro_victimario],
+        fill: true,
+        backgroundColor: "rgba(104, 230, 145, 0.2)",
+        borderColor: "rgb(104, 230, 145)",
+        pointBackgroundColor: "rgb(104, 230, 145)",
+        pointBorderColor: "#fff",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "rgb(104, 230, 145)",
+      },
+    ],
+  };
+
+  const configRadarChart = {
+    type: "radar",
+    data: dataRadar,
+    options: {
+      scales: {
+          r: {
+              min: 0,
+              max: 1,
+          },
+      },
+    },
+  };
+
+  var chartBar = new Chart(
+    document.getElementById("chartRadar"),
+    configRadarChart
+  );
+</script>

@@ -18,6 +18,62 @@ class StaticController < ApplicationController
 
   end
 
+  def global
+    if !current_user.encargado
+      redirect_to simulaciones_path
+    end
+
+    empresas = Empresa.all
+    count = empresas.count
+    
+    @nota1 = 0
+    @nota2 = 0
+    @nota3 = 0
+    @nota4 = 0
+    @nota5 = 0
+    @nota6 = 0
+
+    @contador1 = 0
+    @contador2 = 0
+    @contador3 = 0
+    @contador4 = 0
+    @contador5 = 0
+    @contador6 = 0
+    @contador7 = 0
+    @contador8 = 0
+    @contador9 = 0
+
+    
+    empresas.each do |empresa|
+      @nota1 += empresa.promedio_encuesta_inicial_microinsulto
+      @nota2 += empresa.promedio_encuesta_final_microinsulto
+      @nota3 += empresa.promedio_encuesta_inicial_microasalto
+      @nota4 += empresa.promedio_encuesta_final_microasalto
+      @nota5 += empresa.promedio_encuesta_inicial_microinvalidacion
+      @nota6 += empresa.promedio_encuesta_final_microinvalidacion
+
+      @contador1 += empresa.contador_decisiones("Testigo", -1)
+      @contador2 += empresa.contador_decisiones("Testigo", 0)
+      @contador3 += empresa.contador_decisiones("Testigo", 1)
+      @contador4 += empresa.contador_decisiones("Victima", -1)
+      @contador5 += empresa.contador_decisiones("Victima", 0)
+      @contador6 += empresa.contador_decisiones("Victima", 1)
+      @contador7 += empresa.contador_decisiones("Victimario", -1)
+      @contador8 += empresa.contador_decisiones("Victimario", 0)
+      @contador9 += empresa.contador_decisiones("Victimario", 1)
+    end
+
+    @nota1 = @nota1/count
+    @nota2 = @nota2/count
+    @nota3 = @nota3/count
+    @nota4 = @nota4/count
+    @nota5 = @nota5/count
+    @nota6 = @nota6/count
+
+
+
+  end
+
   def simulaciones
     @user = current_user
   end
@@ -58,5 +114,5 @@ class StaticController < ApplicationController
   def microinvalidacion
     @user = User.find(params[:user_id])
   end
-  
+
 end

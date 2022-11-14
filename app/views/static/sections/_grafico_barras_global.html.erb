@@ -1,0 +1,73 @@
+<div class="grafico-barras shadow-lg rounded-lg overflow-hidden">
+
+    <canvas 
+      class="p-10" 
+      id="chartBar" 
+      nota1="<%= nota1 %>" 
+      nota2="<%= nota2 %>" 
+      nota3="<%= nota3 %>" 
+      nota4="<%= nota4 %>" 
+      nota5="<%= nota5 %>"
+      nota6="<%= nota6 %>"
+      >
+    </canvas> 
+
+</div>
+
+
+
+<!-- Required chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Chart bar -->
+<script>
+  var charbar = document.getElementById("chartBar");
+  var porcentaje1 = charbar.getAttribute('nota1');
+  var porcentaje2 = charbar.getAttribute('nota2');
+  var porcentaje3 = charbar.getAttribute('nota3');
+  var porcentaje4 = charbar.getAttribute('nota4');
+  var porcentaje5 = charbar.getAttribute('nota5');
+  var porcentaje6 = charbar.getAttribute('nota6');
+
+
+  const labelsBarChart = [
+    "Microinsulto",
+    "Microasalto",
+    "Microinvalidación"
+  ];
+  const dataBarChart = {
+    labels: labelsBarChart,
+    datasets: [
+      {
+        label: "Encuesta Inicial",
+        backgroundColor: "#1C92EE",
+        borderColor: "#854d0e",
+        data: [porcentaje1,porcentaje3,porcentaje5],
+      },  
+      {
+        label: "Encuesta Final",
+        backgroundColor: "#8B55C1" ,
+        borderColor: "#365314",
+        data: [porcentaje2,porcentaje4,porcentaje6],
+      },     
+    ],
+  };
+
+  const configBarChart = {
+    type: "bar",
+    data: dataBarChart,
+    options: {
+      scales: {
+          y: {
+              min: 0,
+              max: 100 ,
+          },
+      },
+    },
+  };
+
+  var chartBar = new Chart(
+    document.getElementById("chartBar"),
+    configBarChart
+  );
+</script>

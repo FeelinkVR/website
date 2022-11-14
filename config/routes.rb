@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   end
 
   get '/simulaciones', to: "static#simulaciones", as: "simulaciones"
+  get '/global', to: "static#global", as: "global"
   get '/resultados/:user_id', to: "static#resultados", as: "resultados"
   get '/microinsulto/:user_id', to: "static#microinsulto", as: "microinsulto"
   get '/microasalto/:user_id', to: "static#microasalto", as: "microasalto"

@@ -1,0 +1,14 @@
+<section class= "layout-dashboard">
+    <div class="encuestas-general">
+        <h2 class="text-3xl font-extrabold dark:text-white mb-4">Puntajes Globales</h2>
+                <p class="mb-3 text-lg font-light text-gray-500 md:text-xl dark:text-gray-400">Valores promedio de todas las empresas que han realizado la experiencia Feelink.</p>
+         <%= render "static/sections/grafico_barras_global" , nota1: @nota1, nota2: @nota2, nota3: @nota3, nota4: @nota4, nota5: @nota5, nota6: @nota6%>
+    </div>
+
+    <div class ="tendencias-general">
+        <h2 class="text-3xl font-extrabold dark:text-white my-4">Tendencias Globales de conductas</h2>
+        <p class="mb-3 text-lg font-light text-gray-500 md:text-xl dark:text-gray-400">Análisis de decisiones promedio de los empleados de todas las empresas.</p>
+        <%= render "static/sections/grafico_polar_global" , nota1: @contador1, nota2: @contador2, nota3: @contador3, nota4: @contador4, nota5: @contador5, nota6: @contador6, nota7: @contador7, nota8: @contador8, nota9: @contador9 %>
+    </div>
+
+</section>
