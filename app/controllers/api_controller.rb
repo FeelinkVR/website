@@ -44,4 +44,28 @@ class ApiController < ApplicationController
             end
         end
     end
+
+    def get_simulations
+        simulations = Simulation.where(realizada: false).all
+
+        data = []
+
+        simulations.each do |simulacion|
+            user = User.find(simulacion.user_id)
+            data << {
+                :id_simulacion => simulacion.id,
+                :nombre_simulacion => simulacion.tipo,
+                :perspectiva => simulacion.perspectiva,
+                :id_usuario => user.id,
+                :nombre_usuario => user.nombre,
+                :apellido_usuario => user.apellido,
+                :empresa => user.empresa.nombre,
+            }
+        end
+        data2 = { :simulaciones => data}
+        require 'json'
+        render json: JSON.pretty_generate(data2)
+
+    end
+
 end

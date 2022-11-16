@@ -41,6 +41,7 @@ Rails.application.routes.draw do
   
   #API
   get "/api/show_user", to: "api#show_user", as: "api_show_user"
+  get "/api/get_simulations", to: "api#get_simulations", as: "api_get_simulations"
   post "/api/simulacion_realizada", to: "api#simulacion_realizada", as: "api_simulacion_realizada"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
