@@ -1,6 +1,6 @@
 // A $( document ).ready() block.
-$(document).on("turbolinks:load", function() {
-    console.log("turbo links load");
+$(document).ready(function() {
+
     //jQuery time
     var current_fs, next_fs, previous_fs; //fieldsets
     var left, opacity, scale; //fieldset properties which we will animate
