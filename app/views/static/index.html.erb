@@ -16,10 +16,23 @@
     </div>
 
 
-        <div class ="tendencias-general">
-        <h2 class="text-3xl font-extrabold dark:text-white my-4">Resultados Presencia Migroagresiones</h2>
+    <div class ="tendencias-general">
+        <h2 class="text-3xl font-extrabold dark:text-white my-4">Resultados Presencia Microinsulto</h2>
         <p class="mb-3 text-lg font-light text-gray-500 md:text-xl dark:text-gray-400"></p>
-        <%= render "static/sections/grafico_radial", presencia_yes: @presencia_yes, presencia_no: @presencia_no, presencia_quizas: @presencia_quizas  %>
+        <%= render "static/sections/grafico_radial_microinsulto", presencia_yes1: @presencia_yes1, presencia_no1: @presencia_no1, presencia_quizas1: @presencia_quizas1  %>
+    </div>
+
+    <div class ="tendencias-general">
+        <h2 class="text-3xl font-extrabold dark:text-white my-4">Resultados Presencia Microasalto</h2>
+        <p class="mb-3 text-lg font-light text-gray-500 md:text-xl dark:text-gray-400"></p>
+        <%= render "static/sections/grafico_radial_microasalto", presencia_yes2: @presencia_yes2, presencia_no2: @presencia_no2, presencia_quizas2: @presencia_quizas2  %>
+    </div>
+
+    <div class ="tendencias-general">
+        <h2 class="text-3xl font-extrabold dark:text-white my-4">Resultados Presencia Microinvalidacion</h2>
+        <p class="mb-3 text-lg font-light text-gray-500 md:text-xl dark:text-gray-400"></p>
+        <%= render "static/sections/grafico_radial_microinvalidacion", presencia_yes3: @presencia_yes3, presencia_no3: @presencia_no3, presencia_quizas3: @presencia_quizas3  %>
+        
     </div>
 
 </section>

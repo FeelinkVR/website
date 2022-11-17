@@ -1,0 +1,62 @@
+<div class="grafico-polar shadow-lg  rounded-lg overflow-hidden">
+  <canvas 
+  class="p-10" 
+  id="chartRadial3"
+  si = <%= presencia_yes3 %>
+  no = <%= presencia_no3 %>
+  quizas = <%= presencia_quizas3 %>
+  ></canvas>
+</div>
+
+<!-- Required chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Chart -->
+<script>
+
+var chartradial3 = document.getElementById("chartRadial3");
+var si3 = chartradial3.getAttribute('si');
+var no3 = chartradial3.getAttribute('no');
+var quizas3 = chartradial3.getAttribute('quizas');
+
+const data3 = {
+  labels: [
+    'No',
+    'Quizas',
+    'Si',
+  ],
+  datasets: [{
+    label: 'Cantidad',
+    data: [no3, quizas3, si3],
+    backgroundColor: [
+      '#167E03',
+      '#AEB8B9',
+      '#7E1803',
+    ]
+  }]
+};
+
+const config3 = {
+  type: 'polarArea',
+  data: data3,
+    options: {
+    responsive: true,
+    scales: {
+      r: {
+        pointLabels: {
+          display: true,
+          centerPointLabels: true,
+          font: {
+            size: 18
+          }
+        }
+      }
+    },
+  },
+};
+
+var chartRadial3 = new Chart(
+  chartradial3,
+  config3
+);
+</script>

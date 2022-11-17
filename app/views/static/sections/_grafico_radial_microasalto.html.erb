@@ -1,10 +1,10 @@
 <div class="grafico-polar shadow-lg  rounded-lg overflow-hidden">
   <canvas 
   class="p-10" 
-  id="chartRadial"
-  si = <%= presencia_yes %>
-  no = <%= presencia_no %>
-  quizas = <%= presencia_quizas %>
+  id="chartRadial2"
+  si = <%= presencia_yes2 %>
+  no = <%= presencia_no2 %>
+  quizas = <%= presencia_quizas2 %>
   ></canvas>
 </div>
 
@@ -14,12 +14,12 @@
 <!-- Chart -->
 <script>
 
-var chartradial = document.getElementById("chartRadial");
-var si = chartradial.getAttribute('si');
-var no = chartradial.getAttribute('no');
-var quizas = chartradial.getAttribute('quizas');
+var chartradial2 = document.getElementById("chartRadial2");
+var si2 = chartradial2.getAttribute('si');
+var no2 = chartradial2.getAttribute('no');
+var quizas2 = chartradial2.getAttribute('quizas');
 
-const data = {
+const data2 = {
   labels: [
     'No',
     'Quizas',
@@ -27,7 +27,7 @@ const data = {
   ],
   datasets: [{
     label: 'Cantidad',
-    data: [no, quizas, si],
+    data: [no2, quizas2, si2],
     backgroundColor: [
       '#167E03',
       '#AEB8B9',
@@ -36,9 +36,9 @@ const data = {
   }]
 };
 
-const config = {
+const config2 = {
   type: 'polarArea',
-  data: data,
+  data: data2,
     options: {
     responsive: true,
     scales: {
@@ -55,8 +55,8 @@ const config = {
   },
 };
 
-var chartRadial = new Chart(
-  chartradial,
-  config
+var chartRadial2 = new Chart(
+  chartradial2,
+  config2
 );
 </script>
